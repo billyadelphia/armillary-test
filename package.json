@@ -1,0 +1,17 @@
+{
+    "name": "armillary",
+    "version": "1.0.0",
+    "description": "Assignment",
+    "main": "index.js",
+    "license": "MIT",
+    "devDependencies": {
+        "@babel/cli": "^7.7.4",
+        "@babel/core": "^7.7.4",
+        "@babel/preset-env": "^7.7.4",
+        "@babel/register": "^7.7.4"
+    },
+    "scripts": {
+        "prod": "pm2-runtime ecosystem.app.config.js",
+        "build": "babel . --out-dir dist --ignore 'node_modules/*','dist/*','test/*','ext_lib/*' "
+    }
+}
