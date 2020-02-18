@@ -1,14 +1,14 @@
 module.exports = function(input) {
-    let howManyOverlap = 0;
+    let arcadeIsNeeded = 1;
     let lastPlay;
     Object.keys(input).forEach((time) => {
         if (lastPlay) {
             if (time < lastPlay) {
-                howManyOverlap++;
+                arcadeIsNeeded++;
             }
         }
         lastPlay = input[time];
     });
 
-    return howManyOverlap;
+    return arcadeIsNeeded;
 }

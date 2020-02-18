@@ -1,9 +1,14 @@
 const royalRumble = require("./royalRumble");
-let input = "Louis IX,Louis VIII,David II";
-describe("Louis IX,Louis VIII,David II", function() {
-    describe('#royalRumble()', function() {
-        it("should return David II,Louis VIII,Louis IX", function() {
-            royalRumble(input);
+const fs = require('fs');
+const assert = require('assert');
+let shouldBe = "David II,Louis VIII,Louis IX";
+describe('royalRumble()', function() {
+    it(`should return ${shouldBe}`, function(done) {
+        fs.readFile(process.cwd() + "/royalRumble/input.txt", 'utf8', function(err, data) {
+            if (err) throw err;
+            let input = data.replace(/\n/g, ",");
+            assert.equal(royalRumble(input), shouldBe);
+            done();
         });
     });
 });

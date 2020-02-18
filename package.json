@@ -5,8 +5,9 @@
     "main": "index.js",
     "license": "MIT",
     "scripts": {
-        "test-royalRumble": "node_modules/.bin/mocha royalRumble/test.js --grep='Louis IX,Louis VIII,David II'",
-        "test-devenderArcade": "node_modules/.bin/mocha devenderArcade/test.js --grep='#devenderArcade()'"
+        "test-royalRumble": "node_modules/.bin/mocha royalRumble/test.js --grep='royalRumble()'",
+        "test-defenderArcade": "node_modules/.bin/mocha defenderArcade/test.js --grep='defenderArcade()'",
+        "test-defenderArcadeAlternative": "node_modules/.bin/mocha defenderArcade/test-alternative.js --grep='defenderArcadeAlternative()'"
     },
     "dependencies": {
         "mocha": "^7.0.1"

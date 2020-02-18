@@ -1,12 +1,9 @@
 const royalRumble = require("./royalRumble");
-
-let input = "Louis IX,Louis VIII,David II";
-for (const [index, arg] of process.argv.entries()) {
-    if (arg === "--input") {
-        input = process.argv[index + 1];
-    }
-}
-
-let names = royalRumble(input);
-console.log("input :", input);
-console.log("output :", names);
+const fs = require('fs');
+fs.readFile(process.cwd() + "/royalRumble/input.txt", 'utf8', function(err, data) {
+    if (err) throw err;
+    let input = data.replace(/\n/g, ",");
+    let names = royalRumble(input);
+    console.log("input :", input);
+    console.log("output :", names);
+});
